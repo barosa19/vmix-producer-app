@@ -21,7 +21,6 @@ function App() {
         <AudioBtn input={104} bus="B" name="Talk to Talent 2"/>
         <AudioBtn input={104} bus="B" name="Talk to Talent 3"/>
       </div>
-      <script src="./script.js"></script>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

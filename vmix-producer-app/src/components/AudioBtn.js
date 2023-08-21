@@ -1,37 +1,34 @@
 import React, { useState } from "react";
 
 function AudioBtn({ input, bus, name }) {
-    const [busStatus, setBusStatus] = useState("Secondary");
-    const checkStatus = async () => {
-        try {
-          //I need to
-          var vMixData = await fetch("http://3.95.90.145:8088/api/")
-        console.log(vMixData)
-        var audioBuses = vMixData.getElementsByTagName("input")[input-1].getAttribute("audiobusses")
-        if (!audioBuses) {
-            setBusStatus("Secondary")
-        }
-        if (audioBuses.includes(bus)){
-            setBusStatus("Danger")
-        } else {
-            setBusStatus("Success")
-        }
-        } catch(err) {
-          console.log(err)
-          setBusStatus("Secondary")
-        }
-        
-        
-        var x = new XMLHttpRequest();
-        x.open("GET", "http://3.95.90.145:8088/api/", true);
-        x.onreadystatechange = function () {
-          if (x.readyState == 4 && x.status == 200) {
-            var doc = x.responseXML;
-            console.log(doc.getElementsByTagName("input")[103].getAttribute("audiobusses"))
+  const [btnStatus, setBtnStatus] = useState("secondary");
+  const checkStatus = async () => {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", "http://3.95.90.145:8088/api/", true);
+      console.log(x);
+      x.onreadystatechange = function () {
+        if (x.readyState == 4 && x.status == 200) {
+          var doc = x.responseXML;
+          var audioBuses = doc
+            .getElementsByTagName("input")[103]
+            .getAttribute("audiobusses");
+          console.log(audioBuses);
+          if (audioBuses.includes(bus)) {
+            setBtnStatus("danger");
+            console.log(btnStatus)
+          } else {
+            setBtnStatus("success");
+            console.log(btnStatus)
           }
-        };
-        x.send(null);
+        }
       };
+      x.send(null);
+    } catch (err) {
+      console.log(err);
+      setBtnStatus("secondary");
+    }
+  };
   const talkTalent = (inputParam, busParam) => {
     console.log(inputParam, busParam);
     var x = new XMLHttpRequest();
@@ -44,17 +41,16 @@ function AudioBtn({ input, bus, name }) {
 
     x.onreadystatechange = function () {
       if (x.readyState === 4 && x.status === 200) {
-        console.log("Request successful!");
+        checkStatus();
       }
     };
-    checkStatus()
   };
 
   return (
     <button
       onClick={() => talkTalent(input, bus)}
       type="button"
-      class={"btn" + `btn-${busStatus}` + "m-2"}
+      className={"btn " + `btn-${btnStatus} ` + "m-2"}
     >
       {name}
     </button>
