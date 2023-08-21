@@ -1,25 +1,27 @@
 import React from "react";
 import ProducerCaller from "./components/ProducerCall";
 import AudioBtn from "./components/AudioBtn";
+import ReturnBtn from "./components/ReturnBtn";
+import Header from "./components/Header";
 
 //TODO create a flow so producer selects what they are and then takes them to the page
-//TODO create 3 button colors with name amd alter wording on button 
-//TODO ADD multiview changing options
 //TODO make it responsive
 //TODO need to get response from button click and then check status and then alter color
-//TODO convert xml to fetch 
+//TODO convert xml to fetch
 
 function App() {
-
   return (
     <div>
-      <div class="d-flex justify-content-center mb-3">
+      <Header />
+      <div className="d-inline-flex justify-content-center">
         <ProducerCaller />
-      </div>
-      <div class="d-flex justify-content-center">
-        <AudioBtn input={104} bus="A" name="Talk to Talent 1"/>
-        <AudioBtn input={104} bus="B" name="Talk to Talent 2"/>
-        <AudioBtn input={104} bus="B" name="Talk to Talent 3"/>
+        <div className="col-2 d-flex flex-column my-4">
+          <ReturnBtn input={104} output="Output1" name="Program" />
+          <ReturnBtn input={104} output="Output2" name="Multiviewer" />
+          <AudioBtn input={104} bus="A" name="Talent 1" />
+          <AudioBtn input={104} bus="B" name="Talent 2" />
+          <AudioBtn input={104} bus="B" name="Talent 3" />
+        </div>
       </div>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
