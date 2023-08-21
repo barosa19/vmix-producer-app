@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/vmix-producer-app/static/css/main.e6c13ad2.css",
+    "main.js": "/vmix-producer-app/static/js/main.7491f53b.js",
+    "static/js/787.6a719bf1.chunk.js": "/vmix-producer-app/static/js/787.6a719bf1.chunk.js",
+    "static/media/BR_Wordmark_Black.png": "/vmix-producer-app/static/media/BR_Wordmark_Black.75ac7a5c7b0b1901c96d.png",
+    "index.html": "/vmix-producer-app/index.html",
+    "main.e6c13ad2.css.map": "/vmix-producer-app/static/css/main.e6c13ad2.css.map",
+    "main.7491f53b.js.map": "/vmix-producer-app/static/js/main.7491f53b.js.map",
+    "787.6a719bf1.chunk.js.map": "/vmix-producer-app/static/js/787.6a719bf1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.7491f53b.js"
+  ]
+}
