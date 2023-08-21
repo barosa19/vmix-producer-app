@@ -4,9 +4,8 @@ import AudioBtn from "./components/AudioBtn";
 import ReturnBtn from "./components/ReturnBtn";
 import Header from "./components/Header";
 
-//TODO create a flow so producer selects what they are and then takes them to the page
+//TODO create a flow so producer selects what machine and what producer
 //TODO make it responsive
-//TODO need to get response from button click and then check status and then alter color
 //TODO convert xml to fetch
 
 function App() {
