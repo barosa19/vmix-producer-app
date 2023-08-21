@@ -7,6 +7,10 @@ import Header from "./components/Header";
 //TODO create a flow so producer selects what machine and what producer
 //TODO make it responsive
 //TODO convert xml to fetch
+//TODO create users
+//TODO ffplay
+//TODO on press button (on MouseDown on MouseUp)
+//https://dev.to/diraskreact/react-mouse-button-press-and-hold-example-1eck
 
 function App() {
   return (
